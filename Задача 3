@@ -1,0 +1,15 @@
+s = input().strip() 
+try:
+    with open(s, 'r') as file:
+        lines = file.readlines()
+    res = []
+    for i in lines:
+        p = i.strip().split(';')
+        name = p[0]
+        score = sum(list(map(int, p[1:])))
+        res.append((name,score))
+    winners = sorted(res, key=lambda x: x[1], reverse=True)[:3]
+    for i in range(3):
+        print(winners[i][0])
+except:
+    print("no data")
