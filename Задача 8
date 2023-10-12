@@ -1,0 +1,13 @@
+n=int(input())
+store=[]
+k=0
+for i in range(n):
+    t1,t2 = map(int,input().split())
+    if k<max(t1,t2):
+        k=max(t1,t2)
+    store.append((t1,t2))
+piano=[0]*k
+for i in range(n):
+    for j in range(store[i][0], store[i][1]):
+        piano[j-1]+=1
+print(max(piano))
