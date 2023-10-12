@@ -1,0 +1,10 @@
+N, K, M = [int(a) for a in input().split()]
+Dm= [int(a) for a in input().split()]
+for i in range(M):
+    if Dm[i]!=0:
+        N = N - Dm[i]
+        if N<=0:
+            break
+        else:
+            N=N+K
+print(N)
