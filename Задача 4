@@ -1,0 +1,7 @@
+N, K = [int(a) for a in input().split()]
+book=[0]*(N+1)
+for i in range(K):
+    s,f= [int(a) for a in input().split()]
+    for j in range(s,f+1):
+        book[j]=1
+print(book.count(0)-1)
