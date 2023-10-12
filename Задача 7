@@ -1,0 +1,35 @@
+n=int(input())
+channel_id=[]
+subscribers_id=[]
+bot_id=[]
+for i in range(n):
+    s=str(input())
+    ind=s.index(':')
+    channel_id.append(int(s[:ind]))
+    s=s[ind+2:].split(', ')
+    s=list(map(int, s))
+    subscribers_id.append(s)
+
+bot_id=list(map(int,str(input()).split(', ')))
+channel=int(input())
+
+subs_no_bot=[]
+for i in range(n):
+    subs_no_bot.append(list(set(subscribers_id[i])-set(bot_id)))
+
+J_max=0
+for i in range(n):
+    if (i+1)!=channel:
+        A=sum(list(set(subs_no_bot[i])-set(subs_no_bot[channel-1])))
+        B=sum(list(set(subs_no_bot[channel-1])-set(subs_no_bot[i])))
+        C=sum(list(set(subs_no_bot[i]+subs_no_bot[channel - 1])))
+        J=C/(A+B+C)
+        if J>J_max:
+            J_max=J
+            J_chennel=i+1
+print(J_chennel)
+
+
+
+
+
