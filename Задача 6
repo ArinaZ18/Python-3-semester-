@@ -1,0 +1,12 @@
+N = int(input())
+ud = []
+for i in range(1, N+1):
+    s = input().replace(" ", "")
+    s1 = s.lower()
+    s2 = s1.split(';')
+    a = s2[1].split(',')
+    for element in a:
+        ud.append(element)
+uniq = set(ud)
+uniq1 = sorted(uniq)
+print(*uniq1, sep = ', ')
