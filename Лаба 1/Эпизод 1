@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+arr = ['001.dat','002.dat','003.dat','004.dat','005.dat']
+
+for i in range(len(arr)):
+    f=open(arr[i])
+    X=[]
+    Y=[]
+    for j in range(int(f.readline())):
+        x,y = f.readline().split()
+        X.append(float(x))
+        Y.append(float(y))
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+    plt.scatter(X,Y)
+    plt.title('Number of points: ' + str(len(X)))
+    plt.axis('scaled')
+    plt.savefig('Эпизод 1'+ 'Number of points: ' + str(len(X)))
